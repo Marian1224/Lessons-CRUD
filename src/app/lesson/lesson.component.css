@@ -1,0 +1,44 @@
+.line {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.table-all {
+    margin: 20px;
+    display: flex;
+    text-align: center;
+}
+
+th {
+    width: 20%;
+}
+
+td {
+    text-align: start;
+}
+
+.number {
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn {
+    margin: 5px;
+    width: 100px;
+}
+
+.actions {
+    width: 245px;
+}
+
+input { 
+    outline: none;
+    border: none;
+    border-bottom: solid 1px red;
+}
+input:focus {
+    outline: none;
+    border:none;  
+    box-shadow: none;
+    border-bottom: solid 1px red;
+}

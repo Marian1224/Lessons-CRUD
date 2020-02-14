@@ -1,0 +1,38 @@
+<div class="add-form">
+    <button class = "btn btn-secondary btn-block" 
+            (click) = "modalShow()">Add New Leasson
+    </button>
+</div>
+<div class="container" *ngIf ="show">
+    <form #myForm = "ngForm">
+        <div class="group">
+            <label class="label" for="topic">Topic</label>
+            <input type = "text"class="form-control" id="topic"
+                   [(ngModel)] = "task.topic" name = "topic" #topic="ngModel">
+        </div>
+        <div class="group">
+            <label class="label" for="date">Date</label>
+            <input type = "text" class="form-control" id="date"
+                   [(ngModel)] = "task.date" name = "date" #date="ngModel">
+        </div>
+        <div class="group">
+            <label class="label" for="lecturer">Lecturer</label>
+            <input type = "text" class="form-control" id="lecturer"
+                     [(ngModel)] = "task.lecturer" name = "Lecturer" #lecturer="ngModel">
+        </div>    
+    </form>
+    <div class="row justify-content-between">
+        <div class="col-5">
+            <button class = "btn btn-secondary btn-block" 
+                    (click) = "addTask()"
+                    (click) = "modalShow()">Add To The List  
+            </button>
+        </div>
+        <div class="col-5">
+            <button class = "btn btn-secondary btn-block" *ngIf = "show"
+                    (click) = "modalShow()">Close Modal
+            </button>
+        </div>     
+    </div>
+</div>
+ 

@@ -1,0 +1,38 @@
+.add-form {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.label {
+    font-weight: 700;
+}
+
+.container {
+    width: 50%;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+.form-control {
+    display: block;
+    border: none;
+    height: 20px;
+    box-shadow: none;
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+
+.form-control:focus {
+    height: 35px;
+    font-size: 20px;
+}

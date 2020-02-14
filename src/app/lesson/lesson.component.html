@@ -1,0 +1,52 @@
+<div class="line" *ngIf = "!tasks.length">
+    <h1>You haven't added anything yet</h1>
+</div>
+<div class="table-all" *ngIf = "tasks.length">
+    <table class="table table-bordered" >
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Topic</th>
+                <th scope="col">Date</th>
+                <th scope="col">Lecturer</th>
+                <th class="actions" scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let task of tasks; let ind = index" > 
+                <td  class="number" scope="row">{{ ind + 1 }}</td>
+                <td>
+                    <span *ngIf = "!task.edit">{{ task.topic }}</span>
+                    <input *ngIf = "task.edit" type="text" class="form-control" #topic = "ngModel" 
+                            [(ngModel)] = "task.topic" name = "topic">
+                </td>
+                <td>
+                    <span *ngIf = "!task.edit">{{ task.date }}</span>
+                    <input *ngIf = "task.edit" type="text" class="form-control" #date = "ngModel" 
+                            [(ngModel)] = "task.date" name = "date">
+                </td>
+                <td>
+                    <span *ngIf = "!task.edit">{{ task.lecturer }}</span>
+                    <input *ngIf = "task.edit" type="text" class="form-control" #lecturer = "ngModel" 
+                        [(ngModel)] = "task.lecturer" name = "lecturer">
+                </td>
+                <td>
+                    <button class = "btn btn-outline-secondary" *ngIf = "!task.edit"
+                            (click) = "editShow(ind)">Edit
+                    </button>
+                    <button class = "btn btn-outline-success" *ngIf = "task.edit"
+                            (click) = "editShow(ind)"
+                            (click) = "onAddEdit(task.topic, task.date, task.lecturer)">Save
+                    </button>
+
+                    <button class = "btn btn-outline-secondary"
+                            (click) = "deleteTask(task)" *ngIf = "!task.edit">Delete
+                    </button>
+                    <button class = "btn btn-outline-danger"
+                            (click) = "editShow(ind)" *ngIf = "task.edit">Cancel
+                    </button>
+                </td> 
+            </tr>  
+        </tbody>     
+    </table>    
+</div>
